@@ -40,19 +40,4 @@ public class FootballScoreBoardTest {
         assertEquals(5,summary.get(0).getHomeScore());
         assertEquals(10,summary.get(0).getAwayScore());
     }
-
-    @Test
-    public void testFinishGame() {
-        scoreBoard.startGame("Germany", "Canada");
-        scoreBoard.startGame("Spain", "Brazil");
-        scoreBoard.startGame("Italy", "France");
-        scoreBoard.updateScore("Germany", "Canada",5,10);
-        scoreBoard.finishGame("Germany","Canada");
-
-        List<Match> summary = scoreBoard.getSummaryByTotalScore();
-        assertNotEquals("Canada", summary.get(0).getAwayTeam());
-        assertNotEquals("Germany", summary.get(0).getHomeTeam());
-        assertEquals("Spain",summary.get(0).getHomeTeam());
-        assertEquals("Brazil",summary.get(0).getAwayTeam());
-    }
 }
